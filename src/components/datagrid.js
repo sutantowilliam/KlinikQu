@@ -12,6 +12,33 @@ import FontIcon from 'material-ui/FontIcon';
 const editIcon = <FontIcon className="flaticon-edit-pencil-button orange"></FontIcon>;
 const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
 
+const tableData = [
+{
+  tanggal: '12 Desember 2016',
+  penyakit: 'Demam',
+},
+{
+  tanggal: '1 Desember 2016',
+  penyakit: 'Flu dan batuk',
+},
+{
+  tanggal: '10 Oktober 2016',
+  penyakit: 'Pusing',
+},
+{
+  tanggal: '7 Agustus 2016',
+  penyakit: 'Diare',
+},
+{
+  tanggal: '29 Juni 2016',
+  penyakit: 'Maag',
+},
+{
+  tanggal: '4 April 2016',
+  penyakit: 'Sakit perut',
+},
+];
+
 /**
  * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
  */
@@ -22,7 +49,8 @@ const TableExampleSimple = () => (
     fixedFooter={true}>
     <TableHeader
       displaySelectAll={false}
-      adjustForCheckbox={false}>
+      adjustForCheckbox={false}
+      selectable={false}>
       <TableRow>
         <TableHeaderColumn>No</TableHeaderColumn>
         <TableHeaderColumn>Tanggal</TableHeaderColumn>
@@ -32,43 +60,16 @@ const TableExampleSimple = () => (
     </TableHeader>
     <TableBody
       displayRowCheckbox={false}
-      stripedRows={true}>
-      <TableRow>
-        <TableRowColumn>1</TableRowColumn>
-        <TableRowColumn>12 Desember 2016</TableRowColumn>
-        <TableRowColumn>Demam</TableRowColumn>
-        <TableRowColumn></TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>2</TableRowColumn>
-        <TableRowColumn>1 Desember 2016</TableRowColumn>
-        <TableRowColumn>Flu dan batuk</TableRowColumn>
-        <TableRowColumn></TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>3</TableRowColumn>
-        <TableRowColumn>10 Oktober 2016</TableRowColumn>
-        <TableRowColumn>Pusing</TableRowColumn>
-        <TableRowColumn></TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>4</TableRowColumn>
-        <TableRowColumn>7 Agustus 2016</TableRowColumn>
-        <TableRowColumn>Diare</TableRowColumn>
-        <TableRowColumn></TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>5</TableRowColumn>
-        <TableRowColumn>29 Juni 2016</TableRowColumn>
-        <TableRowColumn>Maag</TableRowColumn>
-        <TableRowColumn></TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>6</TableRowColumn>
-        <TableRowColumn>4 April 2016</TableRowColumn>
-        <TableRowColumn>Sakit perut</TableRowColumn>
-        <TableRowColumn></TableRowColumn>
-      </TableRow>
+      stripedRows={true}
+      selectable={false}>
+      {tableData.map( (row, index) => (
+        <TableRow key={index}>
+          <TableRowColumn>{index}</TableRowColumn>
+          <TableRowColumn>{row.tanggal}</TableRowColumn>
+          <TableRowColumn>{row.penyakit}</TableRowColumn>
+          <TableRowColumn>editIcon and deleteIcon</TableRowColumn>
+        </TableRow>
+      ))}
     </TableBody>
   </Table>
 );
