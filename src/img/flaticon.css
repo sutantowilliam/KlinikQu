@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 08/11/2017 16:40
+  	Creation date: 08/11/2017 18:47
   	*/
 
 @font-face {
@@ -28,9 +28,13 @@
 font-style: normal;
 }
 
-.flaticon-trash:before { content: "\f100"; }
-.flaticon-pencil-edit-button:before { content: "\f101"; }
-.flaticon-interface:before { content: "\f102"; }
-.flaticon-doctor-with-stethoscope:before { content: "\f103"; }
-.flaticon-medical-kit:before { content: "\f104"; }
-.flaticon-calendar-interface-symbol-tool:before { content: "\f105"; }
+.flaticon-black-1:before { content: "\f100"; }
+.flaticon-black:before { content: "\f101"; }
+.flaticon-tool:before { content: "\f102"; }
+.flaticon-add-round-button:before { content: "\f103"; }
+.flaticon-trash:before { content: "\f104"; }
+.flaticon-pencil-edit-button:before { content: "\f105"; }
+.flaticon-interface:before { content: "\f106"; }
+.flaticon-doctor-with-stethoscope:before { content: "\f107"; }
+.flaticon-medical-kit:before { content: "\f108"; }
+.flaticon-calendar-interface-symbol-tool:before { content: "\f109"; }

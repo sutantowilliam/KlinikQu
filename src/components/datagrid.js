@@ -14,27 +14,27 @@ const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
 
 const tableData = [
 {
-  tanggal: '12 Desember 2016',
+  tanggal: '12/12/2017',
   penyakit: 'Demam',
 },
 {
-  tanggal: '1 Desember 2016',
-  penyakit: 'Flu dan batuk',
+  tanggal: '01/12/2017',
+  penyakit: 'Batuk pilek',
 },
 {
-  tanggal: '10 Oktober 2016',
+  tanggal: '10/10/2017',
   penyakit: 'Pusing',
 },
 {
-  tanggal: '7 Agustus 2016',
+  tanggal: '07/08/2017',
   penyakit: 'Diare',
 },
 {
-  tanggal: '29 Juni 2016',
+  tanggal: '29/06/2017',
   penyakit: 'Maag',
 },
 {
-  tanggal: '4 April 2016',
+  tanggal: '04/06/2017',
   penyakit: 'Sakit perut',
 },
 ];
@@ -44,7 +44,7 @@ const tableData = [
  */
 const TableExampleSimple = () => (
   <Table
-    height={300}
+    height={250}
     fixedHeader={true}
     fixedFooter={true}>
     <TableHeader
@@ -52,10 +52,10 @@ const TableExampleSimple = () => (
       adjustForCheckbox={false}
       selectable={false}>
       <TableRow>
-        <TableHeaderColumn>No</TableHeaderColumn>
-        <TableHeaderColumn>Tanggal</TableHeaderColumn>
-        <TableHeaderColumn>Penyakit</TableHeaderColumn>
-        <TableHeaderColumn></TableHeaderColumn>
+        <TableHeaderColumn className="first-column">No</TableHeaderColumn>
+        <TableHeaderColumn className="second-column">Tanggal</TableHeaderColumn>
+        <TableHeaderColumn className="third-column">Penyakit</TableHeaderColumn>
+        <TableHeaderColumn className="fourth-column"></TableHeaderColumn>
       </TableRow>
     </TableHeader>
     <TableBody
@@ -63,11 +63,11 @@ const TableExampleSimple = () => (
       stripedRows={true}
       selectable={false}>
       {tableData.map( (row, index) => (
-        <TableRow key={index}>
-          <TableRowColumn>{index}</TableRowColumn>
-          <TableRowColumn>{row.tanggal}</TableRowColumn>
-          <TableRowColumn>{row.penyakit}</TableRowColumn>
-          <TableRowColumn>editIcon and deleteIcon</TableRowColumn>
+        <TableRow key={index+1}>
+          <TableRowColumn className="first-column">{index+1}</TableRowColumn>
+          <TableRowColumn className="second-column">{row.tanggal}</TableRowColumn>
+          <TableRowColumn className="third-column">{row.penyakit}</TableRowColumn>
+          <TableRowColumn className="fourth-column">edit & delete</TableRowColumn>
         </TableRow>
       ))}
     </TableBody>

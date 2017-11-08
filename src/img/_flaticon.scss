@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 08/11/2017 16:40
+    Creation date: 08/11/2017 18:47
     */
 
     @font-face {
@@ -36,16 +36,24 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-trash:before { content: "\f100"; }
-.flaticon-pencil-edit-button:before { content: "\f101"; }
-.flaticon-interface:before { content: "\f102"; }
-.flaticon-doctor-with-stethoscope:before { content: "\f103"; }
-.flaticon-medical-kit:before { content: "\f104"; }
-.flaticon-calendar-interface-symbol-tool:before { content: "\f105"; }
+    .flaticon-black-1:before { content: "\f100"; }
+.flaticon-black:before { content: "\f101"; }
+.flaticon-tool:before { content: "\f102"; }
+.flaticon-add-round-button:before { content: "\f103"; }
+.flaticon-trash:before { content: "\f104"; }
+.flaticon-pencil-edit-button:before { content: "\f105"; }
+.flaticon-interface:before { content: "\f106"; }
+.flaticon-doctor-with-stethoscope:before { content: "\f107"; }
+.flaticon-medical-kit:before { content: "\f108"; }
+.flaticon-calendar-interface-symbol-tool:before { content: "\f109"; }
     
-    $font-Flaticon-trash: "\f100";
-    $font-Flaticon-pencil-edit-button: "\f101";
-    $font-Flaticon-interface: "\f102";
-    $font-Flaticon-doctor-with-stethoscope: "\f103";
-    $font-Flaticon-medical-kit: "\f104";
-    $font-Flaticon-calendar-interface-symbol-tool: "\f105";
+    $font-Flaticon-black-1: "\f100";
+    $font-Flaticon-black: "\f101";
+    $font-Flaticon-tool: "\f102";
+    $font-Flaticon-add-round-button: "\f103";
+    $font-Flaticon-trash: "\f104";
+    $font-Flaticon-pencil-edit-button: "\f105";
+    $font-Flaticon-interface: "\f106";
+    $font-Flaticon-doctor-with-stethoscope: "\f107";
+    $font-Flaticon-medical-kit: "\f108";
+    $font-Flaticon-calendar-interface-symbol-tool: "\f109";
