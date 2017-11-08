@@ -16,8 +16,13 @@ const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
  * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
  */
 const TableExampleSimple = () => (
-  <Table>
-    <TableHeader>
+  <Table
+    height={300}
+    fixedHeader={true}
+    fixedFooter={true}>
+    <TableHeader
+      displaySelectAll={false}
+      adjustForCheckbox={false}>
       <TableRow>
         <TableHeaderColumn>No</TableHeaderColumn>
         <TableHeaderColumn>Tanggal</TableHeaderColumn>
@@ -25,7 +30,9 @@ const TableExampleSimple = () => (
         <TableHeaderColumn></TableHeaderColumn>
       </TableRow>
     </TableHeader>
-    <TableBody>
+    <TableBody
+      displayRowCheckbox={false}
+      stripedRows={true}>
       <TableRow>
         <TableRowColumn>1</TableRowColumn>
         <TableRowColumn>12 Desember 2016</TableRowColumn>
