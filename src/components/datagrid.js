@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Table,
   TableBody,
@@ -42,36 +42,51 @@ const tableData = [
 /**
  * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
  */
-const TableExampleSimple = () => (
-  <Table
-    height={250}
-    fixedHeader={true}
-    fixedFooter={true}>
-    <TableHeader
-      displaySelectAll={false}
-      adjustForCheckbox={false}
-      selectable={false}>
-      <TableRow>
-        <TableHeaderColumn className="first-column">No</TableHeaderColumn>
-        <TableHeaderColumn className="second-column">Tanggal</TableHeaderColumn>
-        <TableHeaderColumn className="third-column">Penyakit</TableHeaderColumn>
-        <TableHeaderColumn className="fourth-column"></TableHeaderColumn>
-      </TableRow>
-    </TableHeader>
-    <TableBody
-      displayRowCheckbox={false}
-      stripedRows={true}
-      selectable={false}>
-      {tableData.map( (row, index) => (
-        <TableRow key={index+1}>
-          <TableRowColumn className="first-column">{index+1}</TableRowColumn>
-          <TableRowColumn className="second-column">{row.tanggal}</TableRowColumn>
-          <TableRowColumn className="third-column">{row.penyakit}</TableRowColumn>
-          <TableRowColumn className="fourth-column">edit & delete</TableRowColumn>
-        </TableRow>
-      ))}
-    </TableBody>
-  </Table>
-);
+
+class TableExampleSimple extends Component {
+  constructor(props) {
+    super(props);
+  }
+  editDelete(row, column) {
+    console.log(row + '-' + column);
+    console.log(this);
+  }
+  render() {
+    return (
+      <Table
+        height={250}
+        fixedHeader={true}
+        fixedFooter={true}
+        onCellClick={this.editDelete}>
+        <TableHeader
+          displaySelectAll={false}
+          adjustForCheckbox={false}
+          selectable={false}>
+          <TableRow>
+            <TableHeaderColumn className="first-column">No</TableHeaderColumn>
+            <TableHeaderColumn className="second-column">Tanggal</TableHeaderColumn>
+            <TableHeaderColumn className="third-column">Penyakit</TableHeaderColumn>
+            <TableHeaderColumn className="fourth-column"></TableHeaderColumn>
+            <TableHeaderColumn className="fifth-column"></TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+        <TableBody
+          displayRowCheckbox={false}
+          stripedRows={true}
+          selectable={false}>
+          {tableData.map( (row, index) => (
+            <TableRow key={index+1}>
+              <TableRowColumn className="first-column">{index+1}</TableRowColumn>
+              <TableRowColumn className="second-column">{row.tanggal}</TableRowColumn>
+              <TableRowColumn className="third-column">{row.penyakit}</TableRowColumn>
+              <TableRowColumn className="fourth-column">e</TableRowColumn>
+              <TableRowColumn className="fifth-column">d</TableRowColumn>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    );
+  }
+}
 
 export default TableExampleSimple;

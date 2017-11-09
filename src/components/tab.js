@@ -5,6 +5,7 @@ import TableExampleSimple from './datagrid.js';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import '../img/flaticon.css';
 import '../App.css';
+import MedicalTab from './medical.js'
 
 const scheduleIcon = <FontIcon className="flaticon-calendar-interface-symbol-tool"></FontIcon>;
 const medicineIcon = <FontIcon className="flaticon-medical-kit"></FontIcon>;
@@ -60,15 +61,7 @@ export default class TabsExampleControlled extends React.Component {
         </Tab>
         <Tab icon={recordsIcon} label="Tab Records" value="Records Tab">
           <div>
-            <div className="title">
-              <br/>
-              Lihat Medical Records
-            </div>
-            <div>
-              <TableExampleSimple/>
-              <FontIcon className="flaticon-black-1 float-left float-button" color={blue500}/>
-              <FontIcon className="flaticon-add-round-button float-right float-button" color={greenA200}/>
-            </div>
+            <MedicalTab/>
           </div>
         </Tab>
         <Tab icon={registerIcon} label="Tab Register" value="RegisterTab">

@@ -16,8 +16,6 @@ class App extends Component {
         <MuiThemeProvider>
         <div>
           <AppBarExampleIconButton/>
-        </div>
-        <div>
           <TabsExampleControlled/>
         </div>
         </MuiThemeProvider>
