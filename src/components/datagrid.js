@@ -8,6 +8,8 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import FontIcon from 'material-ui/FontIcon';
+import '../img/flaticon.css';
+import '../App.css'
 
 const editIcon = <FontIcon className="flaticon-edit-pencil-button orange"></FontIcon>;
 const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
@@ -48,8 +50,14 @@ class TableExampleSimple extends Component {
     super(props);
   }
   editDelete(row, column) {
-    console.log(row + '-' + column);
-    console.log(this);
+    if (column == '3') {
+      alert('editing');
+    } else if (column == '4') {
+      //eslint-disable-next-line
+      if (confirm('Apakah anda yakin ingin menghapus record ke ' + (row + 1) + '?')) {
+        alert('Record ke ' + (row + 1) + ' berhasil dihapus');
+      }
+    }
   }
   render() {
     return (
@@ -79,7 +87,7 @@ class TableExampleSimple extends Component {
               <TableRowColumn className="first-column">{index+1}</TableRowColumn>
               <TableRowColumn className="second-column">{row.tanggal}</TableRowColumn>
               <TableRowColumn className="third-column">{row.penyakit}</TableRowColumn>
-              <TableRowColumn className="fourth-column">e</TableRowColumn>
+              <TableRowColumn className="fourth-column"><FontIcon className="flaticon-edit-pencil-button orange"></FontIcon></TableRowColumn>
               <TableRowColumn className="fifth-column">d</TableRowColumn>
             </TableRow>
           ))}

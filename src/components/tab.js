@@ -27,7 +27,7 @@ export default class TabsExampleControlled extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'ScheduleTab',
+      value: 'RecordsTab',
     };
   }
 
@@ -59,7 +59,7 @@ export default class TabsExampleControlled extends React.Component {
             </p>
           </div>
         </Tab>
-        <Tab icon={recordsIcon} label="Tab Records" value="Records Tab">
+        <Tab icon={recordsIcon} label="Tab Records" value="RecordsTab">
           <div>
             <MedicalTab/>
           </div>
