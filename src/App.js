@@ -7,6 +7,7 @@ import BottomNavigationExampleSimple from './components/bottomnavbar.js';
 import AppBarExampleIconButton from './components/appbar.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TableExampleSimple from './components/datagrid.js'
+import TabsExampleControlled from './components/tab.js'
 
 class App extends Component {
   render() {
@@ -16,17 +17,8 @@ class App extends Component {
         <div>
           <AppBarExampleIconButton/>
         </div>
-        <div className="title">
-          <br/>
-          Lihat Medical Records
-        </div>
         <div>
-          <TableExampleSimple/>
-          <FontIcon className="flaticon-black-1 float-left float-button" color={blue500}/>
-          <FontIcon className="flaticon-add-round-button float-right float-button" color={greenA200}/>
-        </div>
-        <div className="fixed-bottom">
-          <BottomNavigationExampleSimple className="fixed-bottom"/>
+          <TabsExampleControlled/>
         </div>
         </MuiThemeProvider>
       </div>

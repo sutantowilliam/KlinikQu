@@ -29,8 +29,9 @@ class BottomNavigationExampleSimple extends Component {
           <BottomNavigationItem
             label="Schedule"
             icon={scheduleIcon}
-            onClick={() => this.select(0)}
-          />
+            onClick={() => this.select(0)}>
+            <div> test </div>
+          </BottomNavigationItem>
           <BottomNavigationItem
             label="Medicine"
             icon={medicineIcon}
@@ -44,7 +45,7 @@ class BottomNavigationExampleSimple extends Component {
           <BottomNavigationItem
             label="Register"
             icon={registerIcon}
-            onClick={() => this.select(4)}
+            onClick={() => this.select(3)}
           />
         </BottomNavigation>
       </Paper>
