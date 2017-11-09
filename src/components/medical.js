@@ -10,14 +10,26 @@ import TabsExampleControlled from './tab.js'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Filter from 'material-ui/svg-icons/content/filter-list';
+import DatePicker from 'material-ui/DatePicker';
+import TextField from 'material-ui/TextField';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+
+var parent = class Parent extends Component {
+	constructor(props) {
+		super(props);
+	}
+}
 
 var tab = class MedicalTab extends Component {
 	constructor(props) {
 		super(props);
+		window.view = forms['medRecord1'];
 		this.state={
-			view: forms['medRecord1'],
+			view: forms['medRecord1']
 		}
 		this.handleChange = this.handleChange.bind(this);
+		window.handleChange = this.handleChange;
 	}
 
 	getForm(currentMode) {
@@ -38,10 +50,10 @@ var tab = class MedicalTab extends Component {
 	}
 }
 
-var func = function() {
+var func = function(currentMode) {
 	// console.log(document.getElementById('test').parentElement.innerHTML);
 	// console.log(tab.handleChange('addRecord'));
-	console.log(tab.x);
+	window.handleChange(currentMode)
 }
 
 var forms = {
@@ -53,8 +65,8 @@ var forms = {
 				</div>
 				<div>
 					<TableExampleSimple/>
-					<FloatingActionButton className="float-right margin-top margin-right" backgroundColor={blue500}><ContentAdd/></FloatingActionButton>
-					<FloatingActionButton onClick={func} className="float-left margin-top margin-left" backgroundColor={greenA200}><Filter/></FloatingActionButton>
+					<FloatingActionButton onClick={() => func('addRecord')} className="float-right margin-top margin-right" backgroundColor={blue500}><ContentAdd/></FloatingActionButton>
+					<FloatingActionButton className="float-left margin-top margin-left" backgroundColor={greenA200}><Filter/></FloatingActionButton>
             	</div>
             	</div>,
     addRecord: <div>
@@ -62,10 +74,20 @@ var forms = {
     				<br/>
     				Tambah Medical Records
     			</div>
+    			<br/>
     			<div>
-    				this will be the form
-    			</div>
-    			</div>,
+    				<div>Tanggal Record:<DatePicker dialogContainerStyle={{width: 150, float: 'right'}} textFieldStyle={{width: 150, float: 'right'}} autoOk='true' container='dialog' hintText="Tanggal Record" /></div>
+    				<div>Nama Penyakit:<TextField style={{width: 100, float: 'right'}} hintText=""/></div>
+    				<div style={{width: 'fit-content'}}>Nama Dokter:</div><TextField style={{width: 100, float: 'right'}} hintText=""/>
+    				<div>Durasi Sakit:<TextField style={{width: 100}} hintText=""/>
+				        <DropDownMenu value={1} onChange={this.handleChange}>
+				          <MenuItem value={1} primaryText="Hari" />
+				          <MenuItem value={2} primaryText="Minggu" />
+				          <MenuItem value={3} primaryText="Bulan" />
+				        </DropDownMenu>
+	        		</div>
+	    			</div>
+	    			</div>,
 }
 
 export default tab;

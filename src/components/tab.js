@@ -43,7 +43,7 @@ export default class TabsExampleControlled extends React.Component {
         value={this.state.value}
         onChange={this.handleChange}
       >
-        <Tab icon={scheduleIcon} label="Tab Schedule" value="ScheduleTab">
+        <Tab icon={scheduleIcon} label="Schedule" value="ScheduleTab">
           <div>
             <h2 style={styles.headline}>Controllable Tab A</h2>
             <p>
@@ -51,7 +51,7 @@ export default class TabsExampleControlled extends React.Component {
             </p>
           </div>
         </Tab>
-        <Tab icon={medicineIcon} label="Tab Medicine" value="MedicineTab">
+        <Tab icon={medicineIcon} label="Medicine" value="MedicineTab">
           <div>
             <h2 style={styles.headline}>Controllable Tab B</h2>
             <p>
@@ -59,12 +59,12 @@ export default class TabsExampleControlled extends React.Component {
             </p>
           </div>
         </Tab>
-        <Tab icon={recordsIcon} label="Tab Records" value="RecordsTab">
+        <Tab icon={recordsIcon} label="Records" value="RecordsTab">
           <div>
             <MedicalTab/>
           </div>
         </Tab>
-        <Tab icon={registerIcon} label="Tab Register" value="RegisterTab">
+        <Tab icon={registerIcon} label="Register" value="RegisterTab">
           <div>
             <h2 style={styles.headline}>Controllable Tab B</h2>
             <p>
