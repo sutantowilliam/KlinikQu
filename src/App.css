@@ -44,6 +44,10 @@
   margin-top: 10px;
 }
 
+.margin-bottom {
+  margin-bottom: 30px;
+}
+
 .margin-left {
   margin-left: 10px;
 }
@@ -56,6 +60,11 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0px;
 }
 
 .first-column {

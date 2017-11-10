@@ -51,7 +51,7 @@ class TableExampleSimple extends Component {
   }
   editDelete(row, column) {
     if (column == '3') {
-      alert('editing');
+      window.editRecord('editRecord');
     } else if (column == '4') {
       //eslint-disable-next-line
       if (confirm('Apakah anda yakin ingin menghapus record ke ' + (row + 1) + '?')) {

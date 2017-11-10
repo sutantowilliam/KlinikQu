@@ -10,10 +10,16 @@ import TabsExampleControlled from './tab.js'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Filter from 'material-ui/svg-icons/content/filter-list';
+import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const style = {
+  margin: 12,
+};
 
 var parent = class Parent extends Component {
 	constructor(props) {
@@ -30,10 +36,16 @@ var tab = class MedicalTab extends Component {
 		}
 		this.handleChange = this.handleChange.bind(this);
 		window.handleChange = this.handleChange;
+		this.editRecord = this.editRecord.bind(this);
+		window.editRecord = this.editRecord;
 	}
 
 	getForm(currentMode) {
 		return forms[currentMode];
+	}
+
+	editRecord(currentMode) {
+		this.handleChange(currentMode);
 	}
 
 	handleChange(currentMode) {
@@ -56,6 +68,16 @@ var func = function(currentMode) {
 	window.handleChange(currentMode)
 }
 
+var addRecord = function(currentMode) {
+	window.handleChange(currentMode);
+	alert('Record sukses ditambahkan');
+}
+
+var editRecord = function(currentMode) {
+	window.handleChange(currentMode);
+	alert('Record sukses diubah');
+}
+
 var forms = {
 	medRecord1:
 				<div>
@@ -65,8 +87,8 @@ var forms = {
 				</div>
 				<div>
 					<TableExampleSimple/>
+					<FloatingActionButton onClick={() => func('filterRecord')} className="float-left margin-top margin-left" backgroundColor={greenA200}><Filter/></FloatingActionButton>
 					<FloatingActionButton onClick={() => func('addRecord')} className="float-right margin-top margin-right" backgroundColor={blue500}><ContentAdd/></FloatingActionButton>
-					<FloatingActionButton className="float-left margin-top margin-left" backgroundColor={greenA200}><Filter/></FloatingActionButton>
             	</div>
             	</div>,
     addRecord: <div>
@@ -75,10 +97,10 @@ var forms = {
     				Tambah Medical Records
     			</div>
     			<br/>
-    			<div>
-    				<div>Tanggal Record:<DatePicker dialogContainerStyle={{width: 150, float: 'right'}} textFieldStyle={{width: 150, float: 'right'}} autoOk='true' container='dialog' hintText="Tanggal Record" /></div>
-    				<div>Nama Penyakit:<TextField style={{width: 100, float: 'right'}} hintText=""/></div>
-    				<div style={{width: 'fit-content'}}>Nama Dokter:</div><TextField style={{width: 100, float: 'right'}} hintText=""/>
+    			<div className='margin-left margin-right'>
+    				<div>Tanggal Record:<DatePicker autoOk='true' container='dialog' hintText="Tanggal Record" /></div>
+    				<div>Nama Penyakit:<TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></div>
+    				<div>Nama Dokter:</div><TextField hintText=""/>
     				<div>Durasi Sakit:<TextField style={{width: 100}} hintText=""/>
 				        <DropDownMenu value={1} onChange={this.handleChange}>
 				          <MenuItem value={1} primaryText="Hari" />
@@ -86,8 +108,57 @@ var forms = {
 				          <MenuItem value={3} primaryText="Bulan" />
 				        </DropDownMenu>
 	        		</div>
+	        		Keterangan: <TextField multiLine={true} rows='4' rowsMax='4' hintText=""/>
 	    			</div>
-	    			</div>,
+				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
+					<RaisedButton onClick={() => addRecord('medRecord1')} className='float-right margin-right margin-bottom' label="Tambah" primary={true}/>
+	    		</div>,
+	filterRecord: <div>
+    			<div className="title">
+    				<br/>
+    				Filter By
+    			</div>
+    			<br/>
+    			<div className='margin-left margin-right'>
+    				<div>Tanggal mulai:<DatePicker autoOk='true' container='dialog' hintText="Tanggal mulai" /></div>
+    				<div>Tanggal akhir:<DatePicker autoOk='true' container='dialog' hintText="Tanggal akhir" /></div>
+    			</div>
+				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
+					<RaisedButton onClick={() => func('filterRecord1')} className='float-right margin-right margin-bottom' label="Filter" primary={true}/>
+				</div>,
+	filterRecord1:
+				<div>
+        		<div className="title">
+					<br/>
+					Filter Medical Record
+				</div>
+				<div>
+					<TableExampleSimple/>
+					<FloatingActionButton onClick={() => func('medRecord1')} className="float-left margin-top margin-left" backgroundColor={greenA200}><ArrowBack/></FloatingActionButton>
+            	</div>
+            	</div>,
+    editRecord: <div>
+    			<div className="title">
+    				<br/>
+    				Ubah Medical Records
+    			</div>
+    			<br/>
+    			<div className='margin-left margin-right'>
+    				<div>Tanggal Record:<DatePicker autoOk='true' container='dialog' hintText="Tanggal Record" /></div>
+    				<div>Nama Penyakit:<TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></div>
+    				<div>Nama Dokter:</div><TextField hintText=""/>
+    				<div>Durasi Sakit:<TextField style={{width: 100}} hintText=""/>
+				        <DropDownMenu value={1} onChange={this.handleChange}>
+				          <MenuItem value={1} primaryText="Hari" />
+				          <MenuItem value={2} primaryText="Minggu" />
+				          <MenuItem value={3} primaryText="Bulan" />
+				        </DropDownMenu>
+	        		</div>
+	        		Keterangan: <TextField multiLine={true} rows='4' rowsMax='4' hintText=""/>
+	    			</div>
+				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
+					<RaisedButton onClick={() => editRecord('medRecord1')} className='float-right margin-right margin-bottom' label="Ubah" primary={true}/>
+	    		</div>,
 }
 
 export default tab;
