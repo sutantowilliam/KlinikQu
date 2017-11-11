@@ -6,6 +6,7 @@ import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import '../img/flaticon.css';
 import '../App.css';
 import MedicalTab from './medical.js'
+import ScheduleTab from './schedule.js'
 import ObatTab from './medicine.js'
 
 const scheduleIcon = <FontIcon className="flaticon-calendar-interface-symbol-tool"></FontIcon>;
@@ -46,10 +47,7 @@ export default class TabsExampleControlled extends React.Component {
       >
         <Tab icon={scheduleIcon} label="Schedule" value="ScheduleTab">
           <div>
-            <h2 style={styles.headline}>Controllable Tab A</h2>
-            <p>
-              Schedule Tab
-            </p>
+            <ScheduleTab/>
           </div>
         </Tab>
         <Tab icon={medicineIcon} label="Medicine" value="MedicineTab">
