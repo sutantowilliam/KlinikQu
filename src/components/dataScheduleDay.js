@@ -79,6 +79,7 @@ const sabtuData = [
 }
 ];
 
+
 /**
  * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
  */
@@ -164,3 +165,4 @@ class ScheduleByDayTable extends Component {
   }
 }
 export default ScheduleByDayTable;
+
